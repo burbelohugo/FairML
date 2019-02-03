@@ -9,56 +9,8 @@
           <vuestic-chart :data="verticalBarChartData" type="vertical-bar"/>
         </vuestic-widget>
       </div>
-      <div class="flex md6 xs12">
-        <vuestic-widget
-          class="chart-widget"
-          :headerText="$t('charts.horizontalBarChart')"
-        >
-          <vuestic-chart :data="horizontalBarChartData" type="horizontal-bar"/>
-        </vuestic-widget>
-      </div>
     </div>
 
-    <div class="va-row">
-      <div class="flex md12 xs12">
-        <vuestic-widget
-          class="chart-widget"
-          :headerText="$t('charts.lineChart')"
-        >
-          <vuestic-chart :data="lineChartData" type="line"/>
-        </vuestic-widget>
-      </div>
-    </div>
-
-    <div class="va-row">
-      <div class="flex md6 xs12">
-        <vuestic-widget
-          class="chart-widget"
-          :headerText="$t('charts.pieChart')"
-        >
-          <vuestic-chart :data="pieChartData" type="pie"/>
-        </vuestic-widget>
-      </div>
-      <div class="flex md6 xs12">
-        <vuestic-widget
-          class="chart-widget"
-          :headerText="$t('charts.donutChart')"
-        >
-          <vuestic-chart :data="donutChartData" type="donut"/>
-        </vuestic-widget>
-      </div>
-    </div>
-
-    <div class="va-row">
-      <div class="flex md12 xs12">
-        <vuestic-widget
-          class="chart-widget"
-          :headerText="$t('charts.bubbleChart')"
-        >
-          <vuestic-chart :data="bubbleChartData" type="bubble"/>
-        </vuestic-widget>
-      </div>
-    </div>
   </div>
 </template>
 
