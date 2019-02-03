@@ -67,7 +67,7 @@ export default {
       var r = new FileReader();
       r.onload = function(){  };
       const f = r.readAsBinaryString(file);
-      Axios.post('http://18.219.78.218:8000/add_candidate', {
+      Axios.post('http://18.219.78.218:8000/add_candidate/', {
         candidate_pdf: f
       })
       .then(function (response) {
