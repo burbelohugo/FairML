@@ -2,25 +2,83 @@
   <div class="dashboard">
 
     <dashboard-info-widgets></dashboard-info-widgets>
-
-    <div class="ui-typography">
-      <div class="va-row">
-        <div class="md12 flex">
-          <vuestic-widget>
-            <h3>Very important info</h3>
-            <h4>Wow so important title</h4>
-          </vuestic-widget>
-        </div>
-      </div>
-    </div>
-
-    <div class="flex md12">
-      <vuestic-widget :headerText="$t('fileUpload.uploadList')">
+    <vuestic-widget :headerText="'Recent Profiles'">
         <vuestic-file-upload
           v-model="list"
         />
-      </vuestic-widget>
-    </div>
+
+      <div class="table-responsive">
+        <table class="table table-striped first-td-padding">
+          <thead>
+          <tr>
+            <td>{{'tables.headings.name' | translate}}</td>
+            <td>{{'tables.headings.email' | translate}}</td>
+            <td>{{'tables.headings.city' | translate}}</td>
+            <td align="right">{{'tables.headings.score' | translate}}</td>
+            <td></td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Matthew McCormick</td>
+            <td>matthew30@mail.ol</td>
+            <td>Vancouver</td>
+            <td align="right">93</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Nancy Bo</td>
+            <td>nancy@boonweb.com</td>
+            <td>Washington</td>
+            <td align="right">280</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Frederiko Lopez</td>
+            <td>fr.lopez@webmail.sp</td>
+            <td>Barcelona</td>
+            <td align="right">16</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Stanley Hummer</td>
+            <td>mr_winner_2999@gmail.cb</td>
+            <td>Manchester</td>
+            <td align="right">57</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Lendley Wintz</td>
+            <td>9938198146@mailster.io</td>
+            <td>Wien</td>
+            <td align="right">113</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Barbara Noz</td>
+            <td>barbaranoz@mailster.io</td>
+            <td>Brussels</td>
+            <td align="right">68</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Matthew McCormick</td>
+            <td>matthew30@mail.ol</td>
+            <td>Vancouver</td>
+            <td align="right">93</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Nancy Bo</td>
+            <td>nancy@boonweb.com</td>
+            <td>Washington</td>
+            <td align="right">280</td>
+            <td></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </vuestic-widget>
 
 
   </div>

@@ -74,7 +74,7 @@ export default {
           }
       })
       const d = res.data
-      window.location = "http://localhost:8080/#/admin/statistics/charts?nfa=" + d.no_fair_acc + "&nfb=" + d.no_fair_bias + "&nfr=" + d.no_fair_rec + "&fa=" + d.fair_acc + "&fb=" + d.fair_bias  + "&fr=" + d.fair_rec 
+      window.location = "http://localhost:8080/#/admin/statistics/charts?s=h&nfa=" + d.no_fair_acc + "&nfb=" + d.no_fair_bias + "&nfr=" + d.no_fair_rec + "&fa=" + d.fair_acc + "&fb=" + d.fair_bias  + "&fr=" + d.fair_rec 
     } ,
     removeFile (index) {
       this.files.splice(index, 1)

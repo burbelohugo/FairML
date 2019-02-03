@@ -84,13 +84,15 @@ export default {
           prev[decodeURIComponent(p[0])] = decodeURIComponent(p[1]);
           return prev;
       }, {});
+              console.log(obj)
+
       return {
         datasets: [
           {
             label: 'With Fairness',
             backgroundColor: palette.primary,
             borderColor: palette.transparent,
-            data: [obj.fa],
+            data: [0.7],
           },
           {
             label: 'Without Fairness',
