@@ -1,9 +1,9 @@
 <template>
   <vuestic-navbar>
-    <span slot="logo" style="display: table-cell; vertical-align: middle; width: 5vw;">
+    <span slot="logo" style="display: table-cell; vertical-align: middle; width: 6vw;">
       <div style="margin-left: -3vw;">
       <img src="./bag2.png" height="30px" width="40px" style="margin-top: 3vh; align: left;"/>
-      <h3 style="float: right; margin-top: 3.5vh;">FairML</h3>
+      <h3 style="float: right; margin-top: 3.2vh; margin-left: 1vw;">  jobFAIR</h3>
     </div>
     </span>
   </vuestic-navbar>

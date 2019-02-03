@@ -166,6 +166,11 @@ export default {
           return prev;
       }, {});
       return obj;
+    },
+    datum(){
+      console.log(this.regRec)
+      console.log('undefined')
+      return typeof this.regRec != 'undefined';
     }
   }
 }
