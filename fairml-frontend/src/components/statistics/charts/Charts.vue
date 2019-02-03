@@ -28,8 +28,8 @@
                 </tbody>
               </table>
             </div>
-            <h3>Regular Classifier Recommendation: {{ regRec }}</h3>
-            <h3>Fair Classifier Recommendation: {{ fairRec }}</h3>
+            <h5>Regular Classifier Recommendation: <b>{{ regRec }}</b></h5>
+            <h5>Fair Classifier Recommendation: <b>{{ fairRec }}</b></h5>
           </vuestic-widget>
         </div>
       </div>
