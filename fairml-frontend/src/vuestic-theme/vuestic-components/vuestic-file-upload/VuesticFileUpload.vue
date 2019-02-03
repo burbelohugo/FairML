@@ -27,6 +27,7 @@
 <script>
 import VuesticFileUploadList from './VuesticFileUploadList'
 import VuesticFileUploadContainer from './VuesticFileUploadContainer'
+import Vue from 'vue';
 import Axios from 'axios';
 export default {
   name: 'vuestic-file-upload',
@@ -55,7 +56,7 @@ export default {
     },
   },
   methods: {
-    uploadFile (e) {
+    async uploadFile (e) {
       let files = e.target.files || e.dataTransfer.files
 
       // type validation
@@ -67,11 +68,13 @@ export default {
       console.log(file)
       var formData = new FormData();
       formData.append("image", file);
-      Axios.post('http://18.219.78.218:8000/add_candidate/', formData, {
+      const res = await Axios.post('http://18.219.78.218:8000/add_candidate/', formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
       })
+      const d = res.data
+      window.location = "http://localhost:8080/#/admin/statistics/charts?nfa=" + d.no_fair_acc + "&nfb=" + d.no_fair_bias + "&nfr=" + d.no_fair_rec + "&fa=" + d.fair_acc + "&fb=" + d.fair_bias  + "&fr=" + d.fair_rec 
     } ,
     removeFile (index) {
       this.files.splice(index, 1)

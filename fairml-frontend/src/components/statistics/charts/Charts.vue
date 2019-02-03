@@ -7,13 +7,13 @@
           :headerText="'Bias'"
           style="margin-right: 10vw;"
         >
-          <vuestic-chart :data="verticalBarChartData" type="vertical-bar"/>
+          <vuestic-chart :data="bias" type="vertical-bar"/>
         </vuestic-widget>
         <vuestic-widget
           class="chart-widget"
           :headerText="'Accuracy'"
         >
-          <vuestic-chart :data="verticalBarChartData" type="vertical-bar"/>
+          <vuestic-chart :data="accuracy" type="vertical-bar"/>
         </vuestic-widget>
       </div>
     </div>
@@ -29,7 +29,9 @@ import DonutChartData from '../../../data/charts/DonutChartData'
 import VerticalBarChartData from '../../../data/charts/VerticalBarChartData'
 import HorizontalBarChartData from '../../../data/charts/HorizontalBarChartData'
 import SidebarLink from '../../admin/app-sidebar/components/SidebarLink'
+import store from 'vuex-store'
 
+let palette = store.getters.palette
 export default {
   name: 'charts',
   components: {
@@ -48,6 +50,58 @@ export default {
       this.lineChartData = getLineChartData()
     },
   },
+  computed: {
+    bias(){
+      var str = location.href.substring(-48);
+      console.log(str)
+      var obj = str.split("&").reduce(function(prev, curr, i, arr) {
+          var p = curr.split("=");
+          prev[decodeURIComponent(p[0])] = decodeURIComponent(p[1]);
+          return prev;
+      }, {});
+      return {
+        datasets: [
+          {
+            label: 'With Fairness',
+            backgroundColor: palette.primary,
+            borderColor: palette.transparent,
+            data: [obj.fb],
+          },
+          {
+            label: 'Without Fairness',
+            backgroundColor: palette.info,
+            borderColor: palette.transparent,
+            data: [obj.nfb],
+          },
+        ],
+      }
+    },
+    accuracy(){
+      var str = location.href.substring(-48);
+      console.log(str)
+      var obj = str.split("&").reduce(function(prev, curr, i, arr) {
+          var p = curr.split("=");
+          prev[decodeURIComponent(p[0])] = decodeURIComponent(p[1]);
+          return prev;
+      }, {});
+      return {
+        datasets: [
+          {
+            label: 'With Fairness',
+            backgroundColor: palette.primary,
+            borderColor: palette.transparent,
+            data: [obj.fa],
+          },
+          {
+            label: 'Without Fairness',
+            backgroundColor: palette.info,
+            borderColor: palette.transparent,
+            data: [obj.nfa],
+          },
+        ],
+      }
+    }
+  }
 }
 </script>
 
