@@ -6,7 +6,7 @@
           <div class="stats">
             <div class="stats-number">
               <i class="ion ion-md-arrow-up text-primary stats-icon"></i>
-              59
+              1768
             </div>
             <div class="stats-title">{{'dashboard.elements' | translate}}</div>
           </div>
@@ -19,7 +19,7 @@
           <div class="stats">
             <div class="stats-number">
               <i class="ion ion-md-arrow-down text-danger stats-icon"></i>
-              12
+              3232
             </div>
             <div class="stats-title">{{'dashboard.versions' | translate}}</div>
           </div>
@@ -30,15 +30,11 @@
       <vuestic-widget class="info-widget brand-danger">
         <div class="info-widget-inner">
           <div class="info-widget-inner has-chart">
-            <div class="stats">
+            <div class="stats" style="margin-left: 5vw;">
               <div class="stats-number">
-                425
+                4
               </div>
-              <div class="stats-title">Potential Matches</div>
-            </div>
-            <div class="chart-container">
-              <vuestic-progress-bar type="circle" :value="70" theme="White"
-                                    backgroundTheme="Danger"/>
+              <div class="stats-title">Potential Hires</div>
             </div>
           </div>
         </div>

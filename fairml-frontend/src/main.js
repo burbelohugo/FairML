@@ -12,6 +12,8 @@ import router from './router'
 import VuesticPlugin from '@/vuestic-theme/vuestic-plugin'
 import './i18n'
 import YmapPlugin from 'vue-yandex-maps'
+import AsyncComputed from 'vue-async-computed'
+Vue.use(AsyncComputed);
 
 Vue.use(VuesticPlugin)
 Vue.use(YmapPlugin)

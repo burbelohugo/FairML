@@ -12,68 +12,19 @@
           <thead>
           <tr>
             <td>{{'tables.headings.name' | translate}}</td>
-            <td>{{'tables.headings.email' | translate}}</td>
-            <td>{{'tables.headings.city' | translate}}</td>
-            <td align="right">{{'tables.headings.score' | translate}}</td>
-            <td></td>
+            <td>GPA</td>
+            <td>Gender</td>
+            <td>Experience</td>
+            <td>University</td>
           </tr>
           </thead>
           <tbody>
-          <tr>
-            <td>Matthew McCormick</td>
-            <td>matthew30@mail.ol</td>
-            <td>Vancouver</td>
-            <td align="right">93</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Nancy Bo</td>
-            <td>nancy@boonweb.com</td>
-            <td>Washington</td>
-            <td align="right">280</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Frederiko Lopez</td>
-            <td>fr.lopez@webmail.sp</td>
-            <td>Barcelona</td>
-            <td align="right">16</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Stanley Hummer</td>
-            <td>mr_winner_2999@gmail.cb</td>
-            <td>Manchester</td>
-            <td align="right">57</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Lendley Wintz</td>
-            <td>9938198146@mailster.io</td>
-            <td>Wien</td>
-            <td align="right">113</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Barbara Noz</td>
-            <td>barbaranoz@mailster.io</td>
-            <td>Brussels</td>
-            <td align="right">68</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Matthew McCormick</td>
-            <td>matthew30@mail.ol</td>
-            <td>Vancouver</td>
-            <td align="right">93</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Nancy Bo</td>
-            <td>nancy@boonweb.com</td>
-            <td>Washington</td>
-            <td align="right">280</td>
-            <td></td>
+          <tr v-for="i in d">
+            <td>{{ i[0] }}</td>
+            <td>{{ i[1] }}</td>
+            <td><span v-if="i[2] == 1">Male</span><span v-else>Female</span></td>
+            <td>{{ i[3]}}</td>
+            <td>{{i[4]}}</td>
           </tr>
           </tbody>
         </table>
@@ -92,7 +43,7 @@ import FeaturesTab from './features-tab/FeaturesTab.vue'
 import DataVisualisationTab
   from './data-visualisation-tab/DataVisualisation.vue'
 import DashboardBottomWidgets from './DashboardBottomWidgets.vue'
-
+import Axios from 'axios';
 export default {
   name: 'dashboard',
   components: {
@@ -106,6 +57,10 @@ export default {
   data () {
     return {
       list: [],
+      items: [
+      { message: 'Foo' },
+      { message: 'Bar' }
+      ]
     }
   },
   methods: {
@@ -122,6 +77,13 @@ export default {
       })
     },
   },
+  asyncComputed: {
+    async d(){
+      let r = await Axios.get('http://18.219.78.218:8000/fetch_csv/')
+      console.log(r.data)
+      return r.data;
+    }
+  }
 }
 
 </script>
