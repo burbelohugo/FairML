@@ -9,18 +9,20 @@
                 <thead>
                 <tr>
                   <td>{{'tables.headings.name' | translate}}</td>
-                  <td>{{'tables.headings.email' | translate}}</td>
-                  <td>{{'tables.headings.city' | translate}}</td>
-                  <td align="right">{{'tables.headings.score' | translate}}</td>
+                  <td>Gender</td>
+                  <td>University</td>
+                  <td>GPA</td>
+                  <td>Experience</td>
                   <td></td>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td>Matthew McCormick</td>
-                  <td>matthew30@mail.ol</td>
-                  <td>Vancouver</td>
-                  <td align="right">93</td>
+                  <td>{{ obj.name }}</td>
+                  <td>{{ obj.gender }}</td>
+                  <td>{{ obj.school }}</td>
+                  <td>{{ obj.gpa }}</td>
+                  <td>{{ obj.ex }}</td>
                   <td></td>
                 </tr>
                 </tbody>
@@ -154,6 +156,16 @@ export default {
           return prev;
       }, {});
       return obj.fr;
+    },
+    obj(){
+      var str = location.href.substring(-48);
+      console.log(str)
+      var obj = str.split("&").reduce(function(prev, curr, i, arr) {
+          var p = curr.split("=");
+          prev[decodeURIComponent(p[0])] = decodeURIComponent(p[1]);
+          return prev;
+      }, {});
+      return obj;
     }
   }
 }

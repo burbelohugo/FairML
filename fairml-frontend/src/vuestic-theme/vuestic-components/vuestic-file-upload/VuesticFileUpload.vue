@@ -73,8 +73,10 @@ export default {
             'Content-Type': 'multipart/form-data'
           }
       })
-      const d = res.data
-      window.location = "http://localhost:8080/#/admin/statistics/charts?s=h&nfa=" + d.no_fair_acc + "&nfb=" + d.no_fair_bias + "&nfr=" + d.no_fair_rec + "&fa=" + d.fair_acc + "&fb=" + d.fair_bias  + "&fr=" + d.fair_rec 
+      const p = res.data.data
+      const d = res.data.prediction
+      console.log(res)
+      window.location = "http://localhost:8080/#/admin/statistics/charts?s=h&nfa=" + d.no_fair_acc + "&nfb=" + d.no_fair_bias + "&nfr=" + d.no_fair_rec + "&fa=" + d.fair_acc + "&fb=" + d.fair_bias  + "&fr=" + d.fair_rec + "&name=" + p.Name + "&gender=" + p.Gender + "&school=" + p.School + "&gpa=" + p.GPA + "&ex=" + p.Ex
     } ,
     removeFile (index) {
       this.files.splice(index, 1)
