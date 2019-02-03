@@ -1,11 +1,11 @@
 <template>
   <div class="charts-page">
     <div class="va-row">
-      <div class="flex md6 xs12"
+      <div class="flex md6 xs12" style="display: flex;justify-content: center;">
         <vuestic-widget
           class="chart-widget"
           :headerText="'Bias'"
-          style="margin-right: 10vw;"
+          style="margin-left: 40vw; margin-right: 10vw;width: 100%;"
         >
           <vuestic-chart :data="bias" type="vertical-bar"/>
         </vuestic-widget>
@@ -62,16 +62,16 @@ export default {
       return {
         datasets: [
           {
-            label: 'With Fairness',
-            backgroundColor: palette.primary,
-            borderColor: palette.transparent,
-            data: [obj.fb],
-          },
-          {
             label: 'Without Fairness',
             backgroundColor: palette.info,
             borderColor: palette.transparent,
             data: [obj.nfb],
+          },
+          {
+            label: 'With Fairness',
+            backgroundColor: palette.primary,
+            borderColor: palette.transparent,
+            data: [obj.fb],
           },
         ],
       }
@@ -89,16 +89,16 @@ export default {
       return {
         datasets: [
           {
-            label: 'With Fairness',
-            backgroundColor: palette.primary,
-            borderColor: palette.transparent,
-            data: [0.7],
-          },
-          {
             label: 'Without Fairness',
             backgroundColor: palette.info,
             borderColor: palette.transparent,
             data: [obj.nfa],
+          },
+          {
+            label: 'With Fairness',
+            backgroundColor: palette.primary,
+            borderColor: palette.transparent,
+            data: [0.7],
           },
         ],
       }

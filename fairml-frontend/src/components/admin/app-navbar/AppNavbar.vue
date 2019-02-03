@@ -4,13 +4,6 @@
     <span slot="logo" style="display: table-cell; vertical-align: middle;">
       <h3 style="margin-top: 2vh">FairML</h3>
     </span>
-
-    <message-dropdown class="col nav-item"/>
-    <notification-dropdown class="col nav-item"/>
-    <language-dropdown class="col nav-item"/>
-    <profile-dropdown class="col nav-item">
-      <img src="https://i.imgur.com/nfa5itq.png"/>
-    </profile-dropdown>
   </vuestic-navbar>
 
 </template>
