@@ -1,6 +1,39 @@
 <template>
   <div class="charts-page">
+    <div class="ui-typography">
+      <div class="va-row">
+        <div class="md12 flex">
+          <vuestic-widget style="text-align:center">
+            <div class="table-responsive">
+              <table class="table table-striped first-td-padding">
+                <thead>
+                <tr>
+                  <td>{{'tables.headings.name' | translate}}</td>
+                  <td>{{'tables.headings.email' | translate}}</td>
+                  <td>{{'tables.headings.city' | translate}}</td>
+                  <td align="right">{{'tables.headings.score' | translate}}</td>
+                  <td></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Matthew McCormick</td>
+                  <td>matthew30@mail.ol</td>
+                  <td>Vancouver</td>
+                  <td align="right">93</td>
+                  <td></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <h3>Regular Classifier Recommendation: {{ regRec }}</h3>
+            <h3>Fair Classifier Recommendation: {{ fairRec }}</h3>
+          </vuestic-widget>
+        </div>
+      </div>
+    </div>
     <div class="va-row">
+
       <div class="flex md6 xs12" style="display: flex;justify-content: center;">
         <vuestic-widget
           class="chart-widget"
@@ -17,7 +50,6 @@
         </vuestic-widget>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -98,10 +130,30 @@ export default {
             label: 'With Fairness',
             backgroundColor: palette.primary,
             borderColor: palette.transparent,
-            data: [0.7],
+            data: [obj.fa],
           },
         ],
       }
+    },
+    regRec(){
+      var str = location.href.substring(-48);
+      console.log(str)
+      var obj = str.split("&").reduce(function(prev, curr, i, arr) {
+          var p = curr.split("=");
+          prev[decodeURIComponent(p[0])] = decodeURIComponent(p[1]);
+          return prev;
+      }, {});
+      return obj.nfr;
+    },
+    fairRec(){
+      var str = location.href.substring(-48);
+      console.log(str)
+      var obj = str.split("&").reduce(function(prev, curr, i, arr) {
+          var p = curr.split("=");
+          prev[decodeURIComponent(p[0])] = decodeURIComponent(p[1]);
+          return prev;
+      }, {});
+      return obj.fr;
     }
   }
 }
