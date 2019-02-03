@@ -8,7 +8,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "vue-cli-service s3-deploy",
+    "deploy": "vue-cli-service build && vue-cli-service s3-deploy",
     "inspect": "vue-cli-service inspect > inspect.js"
   },
   "dependencies": {

@@ -1,8 +1,10 @@
 <template>
   <vuestic-navbar>
-    <header-selector slot="selector" :isOpen.sync="valueProxy"/>
-    <span slot="logo" style="display: table-cell; vertical-align: middle;">
-      <h3 style="margin-top: 2vh">FairML</h3>
+    <span slot="logo" style="display: table-cell; vertical-align: middle; width: 5vw;">
+      <div style="margin-left: -3vw;">
+      <img src="./bag2.png" height="30px" width="40px" style="margin-top: 3vh; align: left;"/>
+      <h3 style="float: right; margin-top: 3.5vh;">FairML</h3>
+    </div>
     </span>
   </vuestic-navbar>
 
