@@ -2,6 +2,18 @@
   <div class="dashboard">
 
     <dashboard-info-widgets></dashboard-info-widgets>
+
+    <div class="ui-typography">
+      <div class="va-row">
+        <div class="md12 flex">
+          <vuestic-widget>
+            <h3>Very important info</h3>
+            <h4>Wow so important title</h4>
+          </vuestic-widget>
+        </div>
+      </div>
+    </div>
+
     <div class="flex md12">
       <vuestic-widget :headerText="$t('fileUpload.uploadList')">
         <vuestic-file-upload
