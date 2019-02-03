@@ -2,6 +2,7 @@ const path = require('path')
 
 module.exports = {
   lintOnSave: false,
+
   pages: {
     index: {
       // entry for the page
@@ -18,6 +19,7 @@ module.exports = {
       chunks: ['chunk-vendors', 'chunk-common', 'index'],
     },
   },
+
   configureWebpack: {
     resolve: {
       alias: {
@@ -37,6 +39,7 @@ module.exports = {
       }
     },
   },
+
   css: {
     loaderOptions: {
       // pass options to sass-loader
@@ -44,6 +47,29 @@ module.exports = {
         // @/ is an alias to src/
         data: `@import "@/sass/shared.scss";`
       }
+    }
+  },
+
+  pluginOptions: {
+    s3Deploy: {
+      registry: undefined,
+      awsProfile: 'default',
+      region: 'us-east-1',
+      bucket: 'pa-w19-fairml',
+      createBucket: true,
+      staticHosting: true,
+      staticIndexPage: 'index.html',
+      staticErrorPage: 'index.html',
+      assetPath: 'dist',
+      assetMatch: '**',
+      deployPath: '/',
+      acl: 'public-read',
+      pwa: false,
+      enableCloudfront: true,
+      cloudfrontId: '*',
+      cloudfrontMatchers: '/*',
+      uploadConcurrency: 5,
+      pluginVersion: '3.0.0'
     }
   }
 }

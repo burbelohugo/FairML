@@ -64,19 +64,15 @@ export default {
       }
       this.files = [...this.files, ...files]
       let file = files[0]
-      var r = new FileReader();
-      r.onload = function(){  };
-      const f = r.readAsBinaryString(file);
-      Axios.post('http://18.219.78.218:8000/add_candidate/', {
-        candidate_pdf: f
+      console.log(file)
+      var formData = new FormData();
+      formData.append("image", file);
+      Axios.post('http://18.219.78.218:8000/add_candidate/', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
       })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    },
+    } ,
     removeFile (index) {
       this.files.splice(index, 1)
     },
