@@ -28,7 +28,7 @@
   },
   "charts": {
     "horizontalBarChart": "Horizontal Bar Chart",
-    "verticalBarChart": "Vertical Bar Chart",
+    "verticalBarChart": "Candidate Analysis Results",
     "lineChart": "Line Chart",
     "pieChart": "Pie Chart",
     "donutChart": "Donut Chart",

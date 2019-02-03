@@ -1,10 +1,17 @@
 <template>
   <div class="charts-page">
     <div class="va-row">
-      <div class="flex md6 xs12">
+      <div class="flex md6 xs12"
         <vuestic-widget
           class="chart-widget"
-          :headerText="$t('charts.verticalBarChart')"
+          :headerText="'Bias'"
+          style="margin-right: 10vw;"
+        >
+          <vuestic-chart :data="verticalBarChartData" type="vertical-bar"/>
+        </vuestic-widget>
+        <vuestic-widget
+          class="chart-widget"
+          :headerText="'Accuracy'"
         >
           <vuestic-chart :data="verticalBarChartData" type="vertical-bar"/>
         </vuestic-widget>

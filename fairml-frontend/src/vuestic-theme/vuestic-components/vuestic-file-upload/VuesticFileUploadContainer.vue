@@ -18,7 +18,7 @@
         class="vuestic-file-upload-container__field__input"
         ref="fieldInput"
         :accept="fileTypes"
-        :multiple="type !== 'single'"
+        :multiple="false"
         @change="changeFieldValue"
       >
     </div>
