@@ -2,25 +2,6 @@
   <div class="dashboard">
 
     <dashboard-info-widgets></dashboard-info-widgets>
-
-    <vuestic-widget class="no-padding no-v-padding">
-      <vuestic-tabs
-        :names="[$t('dashboard.dataVisualization')]"
-        ref="tabs">
-        <div :slot="$t('dashboard.dataVisualization')">
-          <data-visualisation-tab></data-visualisation-tab>
-        </div>
-        <div :slot="$t('dashboard.usersAndMembers')">
-          <users-members-tab></users-members-tab>
-        </div>
-        <div :slot="$t('dashboard.setupProfile')">
-          <setup-profile-tab></setup-profile-tab>
-        </div>
-        <div :slot="$t('dashboard.features')">
-          <features-tab></features-tab>
-        </div>
-      </vuestic-tabs>
-    </vuestic-widget>
     <div class="flex md12">
       <vuestic-widget :headerText="$t('fileUpload.uploadList')">
         <vuestic-file-upload
@@ -29,7 +10,6 @@
       </vuestic-widget>
     </div>
 
-    <dashboard-bottom-widgets></dashboard-bottom-widgets>
 
   </div>
 </template>
